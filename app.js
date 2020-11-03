@@ -36,6 +36,12 @@ app.use((req, res, next) => {
 });
 app.use(bodyParser.json());
 
+app.get("/", (req, res) => {
+  res.send({
+    message: "MY BACKEND",
+  });
+});
+
 app.post("/user/login", async (req, res) => {
   let { email, password } = req.body;
   console.log(email, password);
